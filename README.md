@@ -65,27 +65,27 @@ The methods for using the Beacon Registry are included in the /BeaconRegistrySDK
 
 The library has multiple methods you can use all included in BeaconRegistrySDK.h:
 
-'- (BeaconRegistrySDK*)initializeWithAPIParams:(NSString *)APIkey : (NSString *)AppID : (NSString *)EndPoint : (int)TimeOut;
+**- (BeaconRegistrySDK*)initializeWithAPIParams:(NSString *)APIkey : (NSString *)AppID : (NSString *)EndPoint : (int)TimeOut;**
 
  This is the initialization method that will create an instance of the BeaconRegistrySDK and initializes it with API info: APIkey, flightNumber, AppID, service endpoint, and timeout.
 
-'- (void)setFlightInfo: (NSString *)airportCode : (NSString *)flightNumber : (NSString *)flightDate : (NSString *)paxName;
+**- (void)setFlightInfo: (NSString *)airportCode : (NSString *)flightNumber : (NSString *)flightDate : (NSString *)paxName;**
 
 This is a mandatory method that sets the BeaconRegistrySDK flight info: airportCode, flightNumber, flightDate, and flightDate.  This method must be called prior to invoking getBeacons:, getBeaconDetails:, addBeaconsLog:, and postBeaconsLogToServer.
 
-'- (void)getBeacons:(NSString *)airportCode :(void (^) (NSDictionary *response))handler;
+**- (void)getBeacons:(NSString *)airportCode :(void (^) (NSDictionary *response))handler;**
 
 This method gets a list of beacons at a given airport code, it accepts airport code as input and returns a NSDictionary of beacons, response can be retrieved from the completion handler of this method, if airportCode is nil then the airportcode set in method setFlightInfo: will be used.
 
-'- (void)getBeaconDetails:(NSString *)UUID : (NSString *)major : (NSString *)minor : (int)rssi :(void (^) (NSDictionary *response))handler;
+**- (void)getBeaconDetails:(NSString *)UUID : (NSString *)major : (NSString *)minor : (int)rssi :(void (^) (NSDictionary *response))handler;**
 
 This method gets the details of a beacon from registry, it accepts beacon's UUID, major, minor, and rssi code as inputs and returns a NSDictionary of beacon details, response can be retrieved from the completion handler of this method.
 
-'- (void)beaconDetectionLog:(NSArray *)beaconsArray;
+**- (void)beaconDetectionLog:(NSArray *)beaconsArray;**
 
 This method accepts an Array of beacon objects (CLBeacon) and locally stores a log for every beacon, later these logs can be posted to API via the postBeaconsLogToServer method.
 
-'- (void) beaconDetectionReport:(void (^) (int response))handler;
+**- (void) beaconDetectionReport:(void (^) (int response))handler;**
 
 This method will post the locally stored beacons logs to API, on success response value will be "200", response can be retrieved from the completion handler of this method.
 
