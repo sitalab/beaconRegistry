@@ -54,7 +54,7 @@ When the application launches and you tap on the Get Beacons button, the app wil
 - Tapping on a beacons that is registered in the registry will get details about this beacon.
 - Post the beacon detection report to the registry when the device is no longer in proximity of the beacons.
 
-How can I sue this code in my project?
+How can I use this code in my project?
 ============
 
 The methods for using the Beacon Registry are included in the /BeaconRegistrySDK folder of the project:
