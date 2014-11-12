@@ -1,4 +1,10 @@
 
+SITA Beacon Registry SDK
+============
+
+This project comprises an SDK to call the REST APIs for the SITA Common use iBeacon Registry, and sample application showing how to use the SDK. The SDK provides a simple way to access the three main iBeacon registry APIs.
+
+
 SITA Common Use Beacon Registry
 ============
 
@@ -65,13 +71,23 @@ The methods for using the Beacon Registry are included in the /BeaconRegistrySDK
 
 The library has multiple methods you can use all included in BeaconRegistrySDK.h:
 
+App Specific Methods (Init & Logging)
+------
+
 **- (BeaconRegistrySDK*)initializeWithAPIParams:(NSString *)APIkey : (NSString *)AppID : (NSString *)EndPoint : (int)TimeOut;**
 
  This is the initialization method that will create an instance of the BeaconRegistrySDK and initializes it with API info: APIkey, flightNumber, AppID, service endpoint, and timeout.
 
-**- (void)setFlightInfo: (NSString *)airportCode : (NSString *)flightNumber : (NSString *)flightDate : (NSString *)paxName;**
+**- (void)beaconDetectionLog:(NSArray *)beaconsArray;**
 
-This is a mandatory method that sets the BeaconRegistrySDK flight info: airportCode, flightNumber, flightDate, and flightDate.  This method must be called prior to invoking getBeacons:, getBeaconDetails:, addBeaconsLog:, and postBeaconsLogToServer.
+This method accepts an Array of beacon objects (CLBeacon) and locally stores a log for every beacon, later these logs can be posted to API via the beaconDetectionReport method.
+
+REST API Methods
+------
+
+'''- (void)setFlightInfo: (NSString *)airportCode : (NSString *)flightNumber : (NSString *)flightDate : (NSString *)paxName;'''
+
+This is an optional method that sets the BeaconRegistrySDK flight info: airportCode, flightNumber, flightDate, and flightDate.  This method must be called prior to invoking getBeacons:, getBeaconDetails:, addBeaconsLog:, and postBeaconsLogToServer.
 
 **- (void)getBeacons:(NSString *)airportCode :(void (^) (NSDictionary *response))handler;**
 
@@ -81,9 +97,7 @@ This method gets a list of beacons at a given airport code, it accepts airport c
 
 This method gets the details of a beacon from registry, it accepts beacon's UUID, major, minor, and rssi code as inputs and returns a NSDictionary of beacon details, response can be retrieved from the completion handler of this method.
 
-**- (void)beaconDetectionLog:(NSArray *)beaconsArray;**
 
-This method accepts an Array of beacon objects (CLBeacon) and locally stores a log for every beacon, later these logs can be posted to API via the beaconDetectionReport method.
 
 **- (void) beaconDetectionReport:(void (^) (int response))handler;**
 

@@ -28,7 +28,7 @@
  *  @brief Initializes the BeaconRegistrySDK instance's flight info.
  *  @since 1.0
  *
- *  This is a mandatory method that sets the BeaconRegistrySDK flight info: airportCode, flightNumber, flightDate, and flightDate.
+ *  This is an optional method that sets the BeaconRegistrySDK flight info: airportCode, flightNumber, flightDate, and flightDate.
  *  @note This method must be called prior to invoking getBeacons:, getBeaconDetails:, addBeaconsLog:, and postBeaconsLogToServer .
  *
  */
