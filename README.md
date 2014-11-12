@@ -21,16 +21,24 @@ The aims of the registry are to promote the use of beacons in the Air Transport 
 - Provide tools to airport operators and beacon owners to visualize and track beacons.
 - Be vendor agnostic - the service should work with beacons from any vendor.
 
-Please visit [Developer.aero](http://www.developer.aero) for more information on the Beacon REgistry.
+Please visit [Developer.aero](http://www.developer.aero) for more information on the Beacon Registry.
 
 What it does
 ============
 
 The app is a simple use case showing how to use the three key APIs from the SITA iBeacon Common Use Registry. 
 
-- Get nearest airport.
-- Get list of beacons at that airport
-- Get details about beacon nearest to your device.
+- Get list of beacons at a given airport
+- Get details about a specific beacon at a given airport
+- Post a beacon detection report to be used for health monitoring of beacons at the registry.
+
+The methods above are included in a library that you can reuse  with a
+
+
+![alt tag](https://raw.github.com/username/projectname/branch/path/to/img.png)
+
+
+
 
 The first two APIs are called on app startup. The third API is called when the user comes into proximity of an iBeacon, to get the meta-details for that iBeacon.
 
