@@ -35,7 +35,7 @@ The app is a simple use case showing how to use the three key APIs from the SITA
 The methods above are included in a library that you can reuse  with a
 
 
-![alt tag](https://raw.github.com/username/projectname/branch/path/to/img.png)
+![alt tag](https://github.com/sitalab/beaconRegistry/blob/master/BeaconRegistrySDK%20Library.png)
 
 
 
