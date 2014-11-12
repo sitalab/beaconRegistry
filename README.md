@@ -51,8 +51,8 @@ When the application launches and you tap on the Get Beacons button, the app wil
 
 - Range for beacons in the proximity of your device.
 - Show beacons that match the registry and others that may not already be included.  All beacons that show up when the app ranges will be saved to the beacon detection logs.
-- Tapping on a beacons that is registered in the registry will get details about this beacon.
-- Post the beacon detection report to the registry when the device is no longer in proximity of the beacons.
+- Show temporary beacon detection report by tapping on the View Activity button. 
+- Post the beacon detection report to the registry when the Provide Feedback button is tapped.
 
 How can I use this code in my project?
 ============
@@ -83,7 +83,7 @@ This method gets the details of a beacon from registry, it accepts beacon's UUID
 
 **- (void)beaconDetectionLog:(NSArray *)beaconsArray;**
 
-This method accepts an Array of beacon objects (CLBeacon) and locally stores a log for every beacon, later these logs can be posted to API via the postBeaconsLogToServer method.
+This method accepts an Array of beacon objects (CLBeacon) and locally stores a log for every beacon, later these logs can be posted to API via the beaconDetectionReport method.
 
 **- (void) beaconDetectionReport:(void (^) (int response))handler;**
 
@@ -93,8 +93,9 @@ This method will post the locally stored beacons logs to API, on success respons
 
 FAQs
 ===
-- Can I get access to the iBeacons deployed at airports?
--- Currently access is still limited to airlines, airports and ground handlers. The plan is to open access to general 3rd parties in the future. 
+*Can I get access to the iBeacons deployed at airports?*
+
+Currently access is still limited to airlines, airports and ground handlers. The plan is to open access to general 3rd parties in the future. 
 
 
 Contributors
