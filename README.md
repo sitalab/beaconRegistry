@@ -85,7 +85,7 @@ This method accepts an Array of beacon objects (CLBeacon) and locally stores a l
 REST API Methods
 ------
 
-'''- (void)setFlightInfo: (NSString *)airportCode : (NSString *)flightNumber : (NSString *)flightDate : (NSString *)paxName;'''
+```- (void)setFlightInfo: (NSString *)airportCode : (NSString *)flightNumber : (NSString *)flightDate : (NSString *)paxName;```
 
 This is an optional method that sets the BeaconRegistrySDK flight info: airportCode, flightNumber, flightDate, and flightDate.  This method must be called prior to invoking getBeacons:, getBeaconDetails:, addBeaconsLog:, and postBeaconsLogToServer.
 
